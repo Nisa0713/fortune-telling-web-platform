@@ -20,3 +20,5 @@ An interactive fortune telling website that allows users to explore horoscope an
 ## Database
 
 The project includes a database setup file: `database.sql`
+
+Live Demo: Currently hosted on Hostinger (temporary unavailable).
