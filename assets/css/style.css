@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #2a004f, #0b0018);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================
+   STAR LAYER 1 – MANY SMALL STARS
+   ========================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 5% 10%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 15% 30%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 25% 70%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 35% 50%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(2px 2px at 45% 20%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 55% 80%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 65% 40%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 75% 60%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(2px 2px at 85% 25%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 95% 75%, rgba(255,255,255,0.8), transparent),
+
+    radial-gradient(2px 2px at 12% 55%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 28% 15%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 48% 65%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 68% 10%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(2px 2px at 88% 45%, rgba(255,255,255,0.9), transparent);
+  opacity: 0.75;
+  animation: starsMoveSlow 80s linear infinite;
+  z-index: 0;
+}
+
+/* =========================
+   STAR LAYER 2 – BIG STARS
+   ========================= */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(3.5px 3.5px at 20% 20%, rgba(255,255,255,1), transparent),
+    radial-gradient(3px 3px at 40% 70%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(4px 4px at 60% 35%, rgba(255,255,255,1), transparent),
+    radial-gradient(3.5px 3.5px at 80% 55%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(4px 4px at 50% 90%, rgba(255,255,255,1), transparent);
+  opacity: 0.9;
+  animation: starsMoveFast 45s linear infinite;
+  z-index: 0;
+}
+
+/* STAR ANIMATIONS */
+@keyframes starsMoveSlow {
+  from { transform: translateY(0); }
+  to   { transform: translateY(250px); }
+}
+
+@keyframes starsMoveFast {
+  from { transform: translateY(0); }
+  to   { transform: translateY(350px); }
+}
+
+/* =========================
+   LOGIN CARD
+   ========================= */
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 360px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: 0 0 35px rgba(170, 90, 255, 0.45);
+}
+
+/* TITLE */
+.login-card h1 {
+  text-align: center;
+  margin-bottom: 22px;
+  color: #e1c7ff;
+  font-size: 28px;
+}
+
+/* HEART */
+.heart {
+  margin-left: 6px;
+  filter: drop-shadow(0 0 8px rgba(200,130,255,1));
+}
+
+/* INPUTS */
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0,0,0,0.45);
+  color: white;
+}
+
+.login-card input::placeholder {
+  color: #d2bdf0;
+}
+
+/* BUTTON */
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #8b5cff, #c08cff);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(170, 100, 255, 0.8);
+}
+
+.login-card button:hover {
+  box-shadow: 0 0 22px rgba(210, 160, 255, 1);
+}
+
+/* LINKS */
+.login-card p {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.login-card a {
+  color: #eddcff;
+  text-decoration: none;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   CREDIT TEXT
+   ========================= */
+.credit {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: rgba(230, 210, 255, 0.7);
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.credit:hover {
+  color: rgba(255, 230, 255, 1);
+}
+
+/* =========================
+   HOME GREETING
+   ========================= */
+.home-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.home-greeting {
+  font-size: 36px;
+  color: #f1ddff;
+  margin-bottom: 12px;
+  text-shadow: 0 0 15px rgba(200,140,255,0.8);
+}
+
+.home-blessing {
+  font-size: 16px;
+  color: #d9c8f0;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+/* =========================
+   HOME CARDS
+   ========================= */
+.home-cards {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.spirit-card {
+  width: 300px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 26px;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 0 35px rgba(170, 90, 255, 0.4);
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+
+.spirit-card img {
+  width: 120px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(200,140,255,0.8));
+}
+
+.spirit-card h2 {
+  margin-bottom: 12px;
+  color: #f3e2ff;
+}
+
+.spirit-card p {
+  font-size: 14px;
+  color: #d8c6f0;
+  line-height: 1.5;
+}
+
+.spirit-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 55px rgba(210, 150, 255, 0.9);
+}
+
+/* =========================
+   TAROT PAGE
+   ========================= */
+.tarot-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.tarot-title {
+  font-size: 34px;
+  color: #f1ddff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(200,140,255,0.8);
+}
+
+.tarot-subtitle {
+  font-size: 16px;
+  color: #d8c6f0;
+  margin-bottom: 40px;
+}
+
+.tarot-cards {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.tarot-card {
+  width: 120px;
+  height: 190px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #5b3b8c, #2a0f4f);
+  box-shadow: 0 0 25px rgba(160, 90, 255, 0.6);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.tarot-card::after {
+  content: "✦";
+  font-size: 26px;
+  color: #e6ccff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+}
+
+.tarot-card:hover {
+  transform: translateY(-10px);
+}
+
+.tarot-card.selected {
+  transform: translateY(-20px) scale(1.05);
+  box-shadow: 0 0 45px rgba(220, 160, 255, 1);
+  outline: 2px solid #e7c6ff;
+}
+
+/* REVEAL BUTTON */
+#revealBtn {
+  padding: 14px 30px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  background: linear-gradient(90deg, #8b5cff, #c08cff);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(180, 110, 255, 0.9);
+}
+
+#revealBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =========================
+   TAROT RESULT PAGE
+   ========================= */
+.reading-box {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.reading-section {
+  width: 260px;
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  box-shadow: 0 0 30px rgba(170, 90, 255, 0.4);
+  text-align: center;
+}
+
+.reading-section h2 {
+  margin-bottom: 14px;
+  color: #f1ddff;
+}
+
+.reading-section p {
+  font-size: 14px;
+  color: #d8c6f0;
+  line-height: 1.6;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: #eddcff;
+  font-size: 14px;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   HOROSCOPE PAGE
+   ========================= */
+.horoscope-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.horoscope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.horoscope-card {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  box-shadow: 0 0 30px rgba(170, 90, 255, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.horoscope-card h2 {
+  margin-bottom: 12px;
+  color: #f1ddff;
+}
+
+.horoscope-card p {
+  font-size: 14px;
+  color: #d8c6f0;
+  line-height: 1.6;
+}
+
+.horoscope-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 45px rgba(210, 150, 255, 0.8);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .horoscope-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .horoscope-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tarot result page link underline fix */
+.reading-section {
+  text-decoration: none;
+  color: inherit;
+}
+
+.reading-section:hover {
+  text-decoration: none;
+}
+
+/* Tarot result sayfasındaki link altı çizgileri kaldır */
+.reading-section a,
+.reading-box a,
+a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* Tarot result link underline KESİN kapatma */
+.reading-section a,
+.reading-box a,
+.reading-btn,
+.reading-btn:visited,
+.reading-btn:hover,
+.reading-btn:active,
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+/* Final tarot page card alignment */
+.tarot-final-cards {
+  margin-top: 30px;
+}
+
+/* Final reading text style */
+.tarot-final-reading {
+  margin-top: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tarot-final-reading p {
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
